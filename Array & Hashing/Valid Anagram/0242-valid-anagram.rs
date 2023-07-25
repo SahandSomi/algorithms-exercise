@@ -1,18 +1,18 @@
-use std::collections::HashSet;
+use std::collections::HashMap;
 
 impl Solution {
-    pub fn contains_duplicate(nums: Vec<i32>) -> bool {
-        let mut map = HashSet::new();
+    pub fn is_anagram(s: String, t: String) -> bool {
+        if (t.len() != s.len()){
+            return false;
+        }
         
-        for &n in nums.iter(){
-
-            if map.contains(&n){
-                return true; 
-            }
-            
-            map.insert(n);          
-        };        
+        let mut map: HashMap<char, i64> = HashMap::new();
         
-        false
+        for (a, b) in s.chars().zip(t.chars()){
+            *map.entry(a).or_default() += 1;
+            *map.entry(b).or_default() -= 1;
+        }
+        
+        map.into_values().all(|cnt| cnt == 0)
     }
 }
