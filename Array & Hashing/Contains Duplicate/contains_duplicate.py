@@ -25,9 +25,6 @@ def test():
     assert answer.containsDuplicate_SS([1,2,3,1]) == True
     assert answer.containsDuplicate_SS([1,2,3,4]) == False
     assert answer.containsDuplicate_SS([1,1,1,3,3,4,3,2,4,2]) == True
-   
-if __name__ == '__main__':
-    main()
 
 # Guide for solution:
 # Brute Force: Compare each element to every other element to find duplicates. This means the time complexity is O(n**2) and the space complexity is O(1).
