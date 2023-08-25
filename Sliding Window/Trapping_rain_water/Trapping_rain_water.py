@@ -42,14 +42,26 @@ class Solution(object):
 
             
     
-    def Trapping_rain_water_neat(self, nums):
+    def Trapping_rain_water_neat(self, height):
         
-        pass
+        if not height:
+            return 0
+
+        l, r = 0, len(height) - 1
+        leftMax, rightMax = height[l], height[r]
+        res = 0
+        while l < r:
+            if leftMax < rightMax:
+                l += 1
+                leftMax = max(leftMax, height[l])
+                res += leftMax - height[l]
+            else:
+                r -= 1
+                rightMax = max(rightMax, height[r])
+                res += rightMax - height[r]
+        return res
             
 # Guide for solution:
 # Brute Force: 
 # 
 ### Golden rule: 
-
-answer = Solution()
-answer.Trapping_rain_water_SS([6,4,2,0,3,2,0,3,1,4,5,3,2,7,5,3,0,1,2,1,3,4,6,8,1,3])
