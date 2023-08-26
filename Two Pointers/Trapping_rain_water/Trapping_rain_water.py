@@ -64,4 +64,4 @@ class Solution(object):
 # Guide for solution:
 # Brute Force: 
 # 
-### Golden rule: 
+### Golden rule: we can asynchrosly do update with two pointer, some time we can use more memory but faster option like pre compute table and use it.
