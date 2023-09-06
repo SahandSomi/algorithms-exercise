@@ -7,6 +7,7 @@ class Solution(object):
         l = 0
         s1_dict = {}
         s2_dict = {}
+
         if len(s1) > len(s2):
             return False
 
@@ -33,6 +34,7 @@ class Solution(object):
 
                 if s2_dict == s1_dict:
                     return True
+                
                 else:
                     s2_dict[s2[l]] -= 1
 
